@@ -1,0 +1,37 @@
+# Ignore the virtual environment
+venv/
+
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore environment configuration
+.env
+*.env
+*.venv
+
+# Ignore SQLite database files
+# *.sqlite3
+# db.sqlite3
+
+# Ignore IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore logs and cache
+*.log
+logs/
+
+# Ignore dependencies (except requirements.txt)
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Ignore compiled C extensions
+*.so
+
+# Ignore Jupyter Notebook checkpoints (if applicable)
+.ipynb_checkpoints/
