@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>CSCB20 Course Website</title>
+      <link rel="stylesheet" href="../static/css/index.css">
+  </head>
+  <body>
+    {% extends "templatehome.html" %}
+    {% block content %}
+      <table class="grade-table">
+        <thead class ="row">
+          <tr>
+            <th>Student Id</th>
+            <th>Student Name</th>
+            <th>Assessment</th>
+            <th>Reason for Regrade Request</th>
+            <th>Status</th>
+            <th>Accept/Reject</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          {% if not requests %}
+            <tr>
+              <td colspan="6">
+                There are no requests.
+              </td>
+            </tr>
+          {% endif %}
+
+          {% for request in requests %}
+            <tr id="request-{{ request.id }}">
+              <td>{{ request.student_id }}</td>
+              <td>{{ request.student_name }}</td>
+              <td>{{ request.assessment }}</td>
+              <td>{{ request.reason }}</td>
+              <td id="status-{{ request.id }}">{{ request.status }}</td>
+              <td>
+                <button class="accept-btn" gradeId="{{ request.grade_id }}" requestId="{{ request.id }}">Accept</button>
+                <button class="reject-btn" gradeId="{{ request.grade_id }}" requestId="{{ request.id }}">Reject</button>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>        
+      </table>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="../static/js/script.js"></script>
+      {% endblock %}
+  </body>
+</html>

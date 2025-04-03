@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSCB20 Course Website</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+    <script src="../static/js/script.js"></script>
+</head>
+{% extends "templatehome.html" %}
+
+{% block content %}
+<h1>View Grades</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Utorid</th>
+            <th>Lastname</th>
+            <th>Firstname</th>
+            <th>A1</th>
+            <th>A2</th>
+            <th>A3</th>
+            <th>Labs</th>
+            <th>Midterm</th>
+            <th>Final</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for s in students %}
+        <tr>
+            <td>{{ s.utorid }}</td>
+            <td>{{ s.lastname }}</td>
+            <td>{{ s.firstname }}</td>
+            <td>{{ s.A1 or '' }}</td>
+            <td>{{ s.A2 or '' }}</td>
+            <td>{{ s.A3 or '' }}</td>
+            <td>{{ s.Labs or '' }}</td>
+            <td>{{ s.Midterm or '' }}</td>
+            <td>{{ s.Final or '' }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<div style="text-align:center; margin-top: 20px;">
+    <a href="{{ url_for('grades_changes') }}" class="btn">Edit Grades</a>
+</div>
+{% endblock %}
+</html>

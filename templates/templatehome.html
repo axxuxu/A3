@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+   <meta charset="utf-8">
+   <title>{% block title %}My Flask App{% endblock %}</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/template.css') }}">
+
+ </head>
+ <body>
+  <header class="sticky-header">
+    <div>
+      {% if accType == 'student' %}
+      <h1>CSCB20 - Student</h1>
+      {% else %}
+      <h1>CSCB20 - Instructor</h1>
+      {% endif %}
+    </div>
+    <div class="head">
+      <nav>
+        <div class="dropdown">
+            <button class="dropbtn">Navigation</button>
+            <div class="dropdown-content">
+              <a href="{{ url_for('homepage') }}">Home</a>
+              <a href="{{ url_for('syllabus') }}">Syllabus</a>
+              <a href="{{ url_for('labs') }}">Labs</a>
+              <a href="{{ url_for('lecturenotes') }}" download>Lecture Notes</a>
+              <a href="https://piazza.com/">Piazza</a>
+              <a href="http://markus2.utsc.utoronto.ca/">Markus</a>
+              {% if accType == 'student' %}
+                <a href="{{ url_for('student_grades') }}">Grades</a>
+                <a href="{{ url_for('student_feedback') }}">Student Feedback</a>
+              {% else %}
+              <a href="{{ url_for('instructor_grades') }}">Students' Grades</a>  
+              <a href="{{ url_for('remark_requests') }}">Remark Requests</a>
+                <a href="{{ url_for('instructor_feedback') }}">View Feedback</a>
+              {% endif %}
+              <a href="{{ url_for('course_team') }}">Course Team</a>
+              <a href="https://calendar.google.com/calendar/embed?...">Calendar</a>
+              <a href="{{ url_for('news') }}">News</a>
+              <a href="{{ url_for('tests') }}">Tests</a>
+              <a href="{{ url_for('resources') }}">Resources</a>
+              <a href="{{ url_for('logout') }}">Log Out</a>
+            </div> 
+        </div>  
+      </nav> 
+    </div>
+  </header>
+  
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+    <footer>
+      <div class="footer">
+          <h1>CSCB20</h1>
+          <h2>Introduction to Web & Databases</h2>
+          <a href="https://web.cs.toronto.edu/" class="faculty-link"><b>Faculty of Computer Science at Uoft</b></a>
+          <p>Site created by Amy Xu, David Wu & Sofia Burhan </p>
+      </div> 
+      <div class="footer">
+          <img src="../static/images/Uoft_logo.jpg" alt="logo">
+      </div>       
+    </footer>  
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <script id="flash-data" type="application/json">
+        {{ messages|tojson }}
+      </script>
+    {% endif %}
+    {% endwith %}
+    <script src="{{ url_for('static', filename='/js/script2.js') }}"></script>
+ </body>
+</html>

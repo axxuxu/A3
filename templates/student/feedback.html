@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSCB20 Course Website</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/feedback.css">
+</head>
+<body>
+    {% extends "templatehome.html" %}
+    {% block content %}
+    <section class="main">
+        <h1>Student's Feedback is very important!</h1>
+        <form form action="{{ url_for('sending_feedback') }}" method="post">
+            <div class="center">
+            <label class="dropdown_instructor" for="instructors">Choose a instructors:   </label>
+            <select class="select_instructor" id="instructors" name="instructor_id">
+                {% for instructor in instructors %}
+                <option value="{{ instructor.id }}">{{ instructor.firstname }} {{ instructor.lastname }}</option>
+                {% endfor %}
+            </select>
+            </div>
+            <div>
+                <p>Q1: What do you like about the instructor's teaching?</p>
+                <div>
+                    <textarea class="textbox" name="question1" placeholder="Please answer all the questions, cannot be empty"></textarea>
+                </div>
+                <p>Q2: What do you recommend the instructor to do to improve their teaching?</p>
+                <div>
+                    <textarea class="textbox" name="question2" placeholder="Please answer all the questions, cannot be empty"></textarea>
+                </div>
+                <p>Q3: What do you like about the labs?</p>
+                <div>
+                    <textarea class="textbox" name="question3" placeholder="Please answer all the questions, cannot be empty"></textarea>
+                </div>
+                <p>Q4: What do you recommend the lab instructors to do to improve their lab teaching?</p>
+                <div>
+                    <textarea class="textbox" name="question4" placeholder="Please answer all the questions, cannot be empty"></textarea>
+                </div>
+                <div  class="center">
+                    <button type="submit" id = "submit" >Read</button>
+                </div>
+        </form>
+    </section>
+    {% endblock %}
+</body>
+
+
+</html>

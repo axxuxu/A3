@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSCB20 Course Website</title>
+        <link rel="stylesheet" href="../static/css/index.css">
+    </head>
+    <body>
+        {% extends "templatehome.html" %}
+        {% block content %}
+        <section id="intro" class="main">
+            <h1>Online Resources</h1>
+            <a href="https://www.utsc.utoronto.ca/~bretscher/b20/"> Course Website</a>
+            <p>
+                Course information, lecture notes, tutorial material, important announcements, etc. will be posted on the course website. It is your responsibility to visit it frequently.
+            </p>   
+            <a href="https://code.tutsplus.com/sql-for-beginners--net-8200a">Beginner Tutorial for MySQL.</a>
+        </section>
+
+        <section class="main">
+            <h1>Email Communication</h1>
+            <div class="course-info">
+                <p1>Questions regarding the course material, assignments, midterm, etc. should be posed on the bulletin board. Questions about the assignment which you feel you cannot formulate without revealing your solution (should be very rare!), as well as questions and concerns regarding your personal matters should be directed to the instructor.</p1>
+                </div>
+                <div>
+                <a href="https://piazza.com/utoronto.ca/winter2017/cscb20"> Discussion Board;</a>
+
+                <p1>You are encouraged to use the bulletin board to discuss the course material, pose questions on the assignments, etc. The bulletin board will be monitored by the instructor and by your TAs. Please, be very careful not to reveal (parts of) your solution on the bulletin board.</p1>
+            </div>
+        </section>
+
+        <section class="main">
+            <h1>Software and documentation</h1>
+            <p><u>Logging into Mathlab:</u> Mac OS comes with the application "terminal". Simple click on it to run. Login to mathlab by typing
+                ssh utorid@mathlab.utsc.utoronto.ca. Enter your password.
+                </u> Windows - you will need a SSH client. PuTTY is a good free one. You can download and install here:<a href="https://www.putty.org/">PuTTY</a> . Use the same command as above to login to mathlab:
+                ssh utorid@mathlab.utsc.utoronto.ca.</p>
+            
+        </section>
+
+        {% endblock %}
+    </body>
+</html>

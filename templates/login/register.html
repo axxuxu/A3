@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>About Flask </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+  </head>
+  <body>
+    {% extends "templatelogin.html" %}
+    {% block content %}
+    <img class = "logo" src="{{ url_for('static', filename='images/uoft.png') }}">
+    <div class="login-container">
+      <h2>Register</h2>
+
+      <form action="{{ url_for('register') }}" method="POST">
+        <div class="form-group">
+          <label for="firstname">First name:</label>
+          <input type="firstname" id="firstname" name="firstname" placeholder="max 128 characters" required>
+        </div>
+        <div class="form-group">
+          <label for="lastname">Last name:</label>
+          <input type="lastname" id="lastname" name="lastname" placeholder="max 128 characters" required>
+        </div>        
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="max 128 characters" required>
+        </div>
+        <div class="form-group">
+          <label for="username">New Username:</label>
+          <input type="text" id="username" name="username" placeholder="max 128 characters" required>
+        </div>
+        <div class="form-group">
+          <label for="password">New Password:</label>
+          <input type="password" id="password" name="password" placeholder="max 128 characters" required>
+        </div>
+        <div class="Cbox">
+          <label for="student">Student</label>
+          <input type="radio" id="student" name="cbox" value="student">
+          <label for="instructor">Instructor</label>
+          <input type="radio" id="instructor" name="cbox" value="instructor">
+        </div>
+
+        <button type="submit" class="login-button">Register</button>
+      </form>
+      <p>To Login?   <a href="{{ url_for('login') }}">Click Here</a></p>
+      <p>To return to homepage <a href="{{ url_for('index') }}">Click Here</a></p>
+    </div>
+    <script src="{{ url_for('static', filename='/js/script.js') }}"></script>
+    {% endblock %}
+  </body>
+  
+</html>
+

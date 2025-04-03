@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSCB20 Course Website</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+</head>
+<body>
+    {% extends "templatehome.html" %}
+    {% block content %}
+    <section class="main">
+        <div class="syllabus">
+        <h1><b> How The Course Is Run</b> </h1>
+        <p>Each week, we will meet twice, once for the lecture and once for the tutorial. Both lectures and tutorials will be in person and 
+        <br> will not be recorded.</p>
+        <h2><b>Coursework Breakdown</b></h2>
+        <ul>
+            <li><h4><b>Assignments (33%)<h4></b></li>
+        <ul>
+            <li>Assignment 1: 8%</li>
+            <li>Assignment 2: 10%</li>
+            <li>Assignment 3: 15%</li>
+            <h5>Assignments will cover material from 2–3 weeks and will be posted on Quercus.
+            </h5>
+        </ul>
+            <li><b><h4>Mid-Term (25%)</h4></b></li>
+        <ul>
+            <li>The mid-term exam will be held in-person during lecture time.</li>
+            <li><b>Tentative Date: February 28</b></li>
+            <li>Duration: 120 minutes</li>
+        </ul>
+            <li><b><h4>Tutorial Attendance (2%)</h4></b></li>
+        <ul>
+            <li>Tutorials will include collaborative problem-solving and practical demonstrations of concepts covered in class.</li>
+            <li>Attendance will be recorded, and you must attend at least 7 tutorials to earn these marks.</li>
+            <li>Tutorials are not graded, and problems solved during tutorials are for practice only.          </li>
+            <li>If you are unable to attend a tutorial, please submit a valid reason.</li>
+        </ul>
+            <li><b></b><h4>Final Exam (40%)</h4></li>
+        <ul>
+            <li>There will be one in-person final exam for the course.</li>
+            <li><b>Note:</b> You must score at least 35% on the final exam to pass the course.</li>
+            </ul>
+        </ul>
+        </div>
+    </section>
+    {% endblock %}
+</body>
+
+
+</html>

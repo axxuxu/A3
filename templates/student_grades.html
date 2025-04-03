@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSCB20 Course Website</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+</head>
+  <body>
+    {% extends "templatehome.html" %}
+    {% block content %}
+      <table class="grade-table">
+        <thead class ="row">
+          <tr>
+            <th>Assessment</th>
+            <th>Grade (%)</th>
+            <th>Remark Request</th>
+            <th>Remark Status</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          {% for grade in grades %}
+            <tr>
+              <td>{{ grade.assessment }}</td>
+              <td>{{ grade.mark }}</td>
+              <td><button class="button" onclick="toggleRequestForm(this, '{{ grade.id }}')">Request Remark</button></td>
+              <td id="status-{{ grade.id }}">{{ grade.request_status }}</td>
+            </tr>
+            <tr class="request-row" id="request-row-{{ grade.id }}" style="display:none">
+              <td colspan="4">
+                <div>
+                  <label>Reason for Remark:</label>
+                  <p>Please only give a short response</p>
+                </div>
+                <div>
+                  <input type="text" class ='reason-input' id="reason-{{grade.id}}" name="reason" grade_id="{{ grade.id }}" placeholder="Enter your reason here">
+                </div>
+                <div>
+                  <button class="submit-request" id="submit-{{ grade.id }}" grade_id="{{ grade.id }}">Submit</button>
+                </div>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>        
+      </table>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="../static/js/script.js"></script>
+      {% endblock %}
+  </body>
+</html>

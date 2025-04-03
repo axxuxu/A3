@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSCB20 Course Website</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/feedback.css">
+    
+    {% extends "templatehome.html" %}
+</head>
+<body>
+    {% block content %}
+    <section class="main">
+        <h2>Anonymous Feedback You've Received</h2>
+        {% set show_feedback = 0 %}
+
+        {% if feedback %}
+            {% for fb in feedback %}
+                {% if not fb.reviewed %}
+                    {% set show_feedback = 1 %}
+                    <div class="feedback-block" style="border: 1px solid #ccc; padding: 10px; margin-bottom: 15px;">
+                        <p><strong>Q1: What do you like about the instructor’s teaching?</strong></p>
+                        <p>{{ fb.question1 }}<br></p>
+
+                        <p><strong>Q2: What do you recommend the instructor to do to improve their teaching?</strong></p>
+                        <p>{{ fb.question2 }}<br></p>
+
+                        <p><strong>Q3: What do you like about the labs?</strong></p>
+                        <p>{{ fb.question3 }}<br></p>
+
+                        <p><strong>Q4: What do you recommend the lab instructors to do to improve their lab teaching?</strong></p>
+                        <p>{{ fb.question4 }}<br></p>
+
+                        <p style="color: red;"><em>Not reviewed</em></p>
+
+                        <form action="{{ url_for('read') }}" method="post">
+                            <input type="hidden" name="feedback_id" value="{{ fb.id }}">
+                            <div class="center">
+                                <button type="submit" id="submit">Read</button>
+                            </div>
+                        </form>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            {% else %}
+                <p class="nofeedback">You've reviewed no feedback!</p>
+            {% endif %}
+          <div>
+            <h2>To Revivew unread feedback <a href="{{ url_for('instructor_feedback') }}">Click Me!</a></h2>
+          </div>
+    </section>
+    {% endblock %}
+
+</body>
+
+
+</html>

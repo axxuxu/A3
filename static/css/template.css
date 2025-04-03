@@ -1,0 +1,222 @@
+/* General Styles */
+* {
+  margin: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #E0F7FA;
+  color: #333333;
+  align-items: center;
+}
+
+
+
+.head {
+  display: flex;
+  flex-direction: row;       
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0;
+}
+
+/* Sticky Header */
+.sticky-header { 
+  flex-direction: column;
+  position: fixed;           
+  top: 0;                    
+  left: 0;                  
+  width: 100%;
+  gap: 0%;
+  height: auto;
+  background-color: #5F9EA0;
+  color: #FFFFFF;
+  text-align: center;
+  display: flex;             
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  z-index: 999;             
+}
+
+.toggle-btn {
+  text-align: center;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+#dark-toggle {
+  display: none;
+}
+
+body:has(#dark-toggle:checked) .toggle-btn {
+  background-color: #ddd;
+  color: black;
+}
+
+body:has(#dark-toggle:checked) {
+  background-color: grey;
+  color: white;
+}
+
+body:has(#dark-toggle:checked) section.main {
+  background-color: #222;
+  color: white;
+}
+
+body:has(#dark-toggle:checked) .assignment {
+  background-color: #222;
+  color: white;
+}
+
+body:has(#dark-toggle:checked) .button {
+  background-color: #222;
+  color: white;
+}
+body:has(#dark-toggle:checked) .textbox {
+  background-color: grey;
+  color: white;
+}
+body:has(#dark-toggle:checked) .labs {
+  background-color: #222;
+  color: white;
+}
+
+body:has(#dark-toggle:checked) footer{
+  background-color: #222;
+  color: white;
+}
+
+body:has(#dark-toggle:checked) .sticky-header {
+  background-color: #222;
+  color: white;
+}
+
+
+main {
+  margin-top: 40vh;
+  margin-bottom: 20vh;
+  height: auto;
+
+}
+
+/* Footer */
+
+footer { 
+    width: 100%; 
+    bottom: 0; 
+    left: 0; 
+    z-index: 10;
+    display: flex;
+    background-color: #5F9EA0;
+    color: white;
+    align-items: center;
+    padding: 15px;
+}
+
+div.footer{
+  margin-left: 20px;
+}
+
+footer a {
+  color: #333;
+  text-decoration: none;
+} 
+
+
+.dropbtn {
+  background-color: green;
+  color: white;
+  padding: 14px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;          
+  text-align: center;   
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  background-color: black;
+  padding: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 5px;
+  z-index: 1001;
+  margin: 0;
+}
+
+.dropdown-content a {
+  margin: 0;
+  color: white;
+  padding: 12px 15px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.dropdown-content a:hover {
+  background-color: #777;
+}
+
+
+div.buttons-flex{
+  display: flex;
+}
+
+img {
+  width: 60%;
+}
+div.footer {
+  width: 100%;
+}
+
+
+.faculty-link:hover{
+  text-decoration: underline;
+}
+
+#darkmode {
+  display: inline-block;
+  background-color: #333;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+#darkmode:hover {
+  background-color: #555;
+}

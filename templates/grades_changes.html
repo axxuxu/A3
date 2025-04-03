@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSCB20 Course Website</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+    <script src="../static/js/script.js"></script>
+</head>
+{% extends "templatehome.html" %}
+
+<body>
+    {% block content %}
+    <h1>Edit Grades</h1>
+    
+    <form method="POST" action="{{ url_for('update_marks') }}">
+        <table>
+            <thead>
+                <tr>
+                    <th>Utorid</th>
+                    <th>Lastname</th>
+                    <th>Firstname</th>
+                    <th>A1</th>
+                    <th>A2</th>
+                    <th>A3</th>
+                    <th>Labs</th>
+                    <th>Midterm</th>
+                    <th>Final</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for s in students %}
+                <tr>
+                    <td>{{ s.utorid }}</td>
+                    <td>{{ s.lastname }}</td>
+                    <td>{{ s.firstname }}</td>
+                    {% for assessment in ['A1', 'A2', 'A3', 'Labs', 'Midterm', 'Final'] %}
+                    <td>
+                        <input type="number" name="{{ s.utorid }}_{{ assessment }}" value="{{ s[assessment] or '' }}" min="0" max="100">
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    
+        <div style="text-align:center; margin: 20px;">
+            <button type="submit">Submit Grades</button>
+        </div>
+    </form>
+    {% endblock %}
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Homepage {{ accType }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
+  </head>
+  <body>
+    {% extends "templatehome.html" %}
+    {% block content %}
+    {% if accType == 'student' %}
+    <section class="main">
+        <div>
+            <h3 class="teacher">Welcome <br>student {{ name }}! <br> Click <a href="{{ url_for('student_grades') }}">Grades</a> to view your grades.</h3>
+        </div> 
+    </section>
+    <section class="main">
+        <h3>What You'll Learn:</h3>
+        <div class="course-info">
+            <ul>
+                <li>Databases</li>
+                <ul>
+                    <li>Key terminology and practical applications</li>
+                    <li>Creating, querying, and updating databases</li>
+                    <li>Designing databases using entity-relationship model</li>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+                    et dolore magna aliqua. Ut enim ad minim veniam, 
+                    quis nostrud exercitation ullamco laboris nisi ut 
+                    aliquip ex ea commodo consequat. Duis aute irure dolor 
+                    in reprehenderit in voluptate velit esse cillum dolore 
+                    eu fugiat nulla pariatur. Excepteur sint occaecat 
+                    cupidatat non proident, sunt in culpa qui officia 
+                    deserunt mollit anim id est laboru
+                </ul>
+            </ul>
+            <ul>
+                <li>Web Development:</li>
+                <ul>
+                    <li>Building static and interactive web documents</li>
+                    <li>Setting up web servers and generating dynamic, server-side content</li>
+                    <li>Designing databases using entity-relationship model</li>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+                    et dolore magna aliqua. Ut enim ad minim veniam, 
+                    quis nostrud exercitation ullamco laboris nisi ut 
+                    aliquip ex ea commodo consequat. Duis aute irure dolor 
+                    in reprehenderit in voluptate velit esse cillum dolore 
+                    eu fugiat nulla pariatur. Excepteur sint occaecat 
+                    cupidatat non proident, sunt in culpa qui officia 
+                    deserunt mollit anim id est laborum.
+                </ul>
+            </ul>
+        </div>
+    </section>
+
+    <section class="main">
+        <h3>Requirements</h3>
+        <div class="course-info2">
+        <p><u>Prerequisite:</u> Some experience with programming in an imperative language such as Python, Java, or C.<br>
+        <u>Exclusion:</u> This course may not be taken after - or concurrently with - any C- or D-level CSC course.</p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+    </section>
+    {% else %}
+    <section class="main">
+        <div>
+            <h1 class="teacher">Welcome<br> instructor {{ name }}! <br>click <a href="{{ url_for('instructor_grades') }}">Students' Grades</a> to see all the grades of your class.</h1>
+        </div> 
+    </section>
+    <section class="main">
+        <h3>What are able to do:</h3>
+        <div class="course-info">
+            <ul>
+                <li>Grading</li>
+                <ul>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+                    et dolore magna aliqua. Ut enim ad minim veniam, 
+                    quis nostrud exercitation ullamco laboris nisi ut 
+                    aliquip ex ea commodo consequat. Duis aute irure dolor 
+                    in reprehenderit in voluptate velit esse cillum dolore 
+                    eu fugiat nulla pariatur. Excepteur sint occaecat 
+                    cupidatat non proident, sunt in culpa qui officia 
+                    deserunt mollit anim id est laboru
+                </ul>
+            </ul>
+            <ul>
+                <li>View feedback</li>
+                <ul>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+                    et dolore magna aliqua. Ut enim ad minim veniam, 
+                    quis nostrud exercitation ullamco laboris nisi ut 
+                    aliquip ex ea commodo consequat. Duis aute irure dolor 
+                    in reprehenderit in voluptate velit esse cillum dolore 
+                    eu fugiat nulla pariatur. Excepteur sint occaecat 
+                    cupidatat non proident, sunt in culpa qui officia 
+                    deserunt mollit anim id est laborum.
+                </ul>
+            </ul>
+        </div>
+    </section>
+
+    <section class="main">
+        <h3>Responsibility:</h3>
+        <div class="course-info2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+    </section>
+    {% endif %}
+    {% endblock %}
+  </body>
+</html>
+
+
