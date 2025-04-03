@@ -31,7 +31,7 @@
                         <p><strong>Q4: What do you recommend the lab instructors to do to improve their lab teaching?</strong></p>
                         <p>{{ fb.question4 }}<br></p>
 
-                        <p style="color: red;"><em>Not reviewed</em></p>
+                        <p style="color: red;"><em>Reviewed</em></p>
 
                         <form action="{{ url_for('read') }}" method="post">
                             <input type="hidden" name="feedback_id" value="{{ fb.id }}">
@@ -46,7 +46,7 @@
                 <p class="nofeedback">No feedback has been submitted to you yet!</p>
             {% endif %}
           <div>
-            <h2>To Revivew feedback <a href="{{ url_for('instructor_readfeedback') }}">Click Me!</a></h2>
+            <h2>To review read feedback <a href="{{ url_for('instructor_readfeedback') }}">Click Me!</a></h2>
           </div>
     </section>
     {% endblock %}

@@ -74,7 +74,7 @@ def instructor_feedback():
     user = session.get('user')
     instructor_id = user['id']
     feedback = Feedback.query.filter_by(instructor_id=instructor_id).all()
-    return render_template("instructor/feedback.html", username=user['username'], accType=user['accType'], feedback=feedback)
+    return render_template("instructor/readfeedback.html", username=user['username'], accType=user['accType'], feedback=feedback)
 
 @app.route("/instructor/readfeedback")
 def instructor_readfeedback():
@@ -84,7 +84,7 @@ def instructor_readfeedback():
     user = session.get('user')
     instructor_id = user['id']
     feedback = Feedback.query.filter_by(instructor_id=instructor_id).all()
-    return render_template("instructor/readfeedback.html", username=user['username'], accType=user['accType'], feedback=feedback)
+    return render_template("instructor/feedback.html", username=user['username'], accType=user['accType'], feedback=feedback)
 
 @app.route("/assignments")
 def assignments():
