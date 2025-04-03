@@ -334,12 +334,12 @@ def register():
         db.session.commit()
 
         if new_user.accType == 'student':
-            a1 = Marks(student_id=new_user.id, assessment='Assignment 1', mark=None, request_id=None, request_status=None)
-            a2 = Marks(student_id=new_user.id, assessment='Assignment 2', mark=None, request_id=None, request_status=None)
-            a3 = Marks(student_id=new_user.id, assessment='Assignment 3', mark=None, request_id=None, request_status=None)
+            a1 = Marks(student_id=new_user.id, assessment='A1', mark=None, request_id=None, request_status=None)
+            a2 = Marks(student_id=new_user.id, assessment='A2', mark=None, request_id=None, request_status=None)
+            a3 = Marks(student_id=new_user.id, assessment='A3', mark=None, request_id=None, request_status=None)
             labs = Marks(student_id=new_user.id, assessment='Labs', mark=None, request_id=None, request_status=None)
             midterm = Marks(student_id=new_user.id, assessment='Midterm', mark=None, request_id=None, request_status=None)
-            final = Marks(student_id=new_user.id, assessment='Final Exam', mark=None, request_id=None, request_status=None)
+            final = Marks(student_id=new_user.id, assessment='Final', mark=None, request_id=None, request_status=None)
             db.session.add_all([a1, a2, a3, labs, midterm, final])
             db.session.commit()
         
